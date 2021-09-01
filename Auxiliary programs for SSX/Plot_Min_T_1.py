@@ -1,4 +1,4 @@
-'''My own version of plotting tools to plot for the Rayleigh bernard problem'''
+'''My own version of plotting tools to plot 2d slices around global minimum of T'''
 import sys
 import pathlib
 from matplotlib import cm
