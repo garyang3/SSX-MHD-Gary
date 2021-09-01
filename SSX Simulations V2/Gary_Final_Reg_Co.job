@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH -p RM
+#SBATCH -t 30:00:00
+#SBATCH -N 24
+#SBATCH --ntasks-per-node 72
+#SBATCH --mail-user=ccartagena@brynmawr.edu
+#SBATCH --mail-type=ALL
+#echo commands to stdout
+set -x
+
+export I_MPI_JOB_RESPECT_PROCESS_PLACEMENT=0
+
+#activate dedalus
+source /jet/home/cacsphys/miniconda3/bin/activate
+conda activate base
+conda activate dedalus
+
+#run mpi program
+cd /ocean/projects/phy190003p/shared/Gary_Final_Run_Tests/FullRes_Regular/Co_helicity
+mpirun -np $SLURM_NTASKS python3 SSX_model_A_2_spheromaks.py
