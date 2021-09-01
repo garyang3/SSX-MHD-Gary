@@ -1,4 +1,4 @@
-'''My own version of plotting tools to plot for the Rayleigh bernard problem'''
+'''My own version of plotting tools to plot maximum/minumum values from simulation out of hdf5 files'''
 import sys
 import pathlib
 import h5py
